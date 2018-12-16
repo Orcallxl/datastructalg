@@ -3,6 +3,7 @@ package sort;
 /**
  * Created by orca on 2018/12/14.
  * 归并排序的元：“归”+“并”，“并”的本质是“分段有序”下的排序算法
+ * 时间复杂度稳定，都是nlogn，空间复杂度0(n)
  * 要记住的编程细节元：mid=start+(end-start)/2,count=end-start+1
  * 编程书写规范：tmp[index++] = o[j++];比写成tmp[index] =o[j++];index++;j++;更好
  */
@@ -55,7 +56,7 @@ public class MergeSort {
     }
 
     public static void main(String args[]) {
-        int[] a = {6, 5, 4, 3, 2, 1};
+        int[] a = {1,2,3,2,1,2,3,4,3,2,1,2,3,4,5,4,3,2,1,2,3,4,5,6,7,6,5,4,3,2,1};
         sort(a);
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i]);
