@@ -1,5 +1,7 @@
 package datastruct;
 
+
+
 /**
  * Created by orca on 2018/12/21.
  * 跳表：链表+索引
@@ -8,4 +10,5 @@ package datastruct;
  * 元：索引、双向链表、随机函数
  */
 public class SkipList {
+
 }
