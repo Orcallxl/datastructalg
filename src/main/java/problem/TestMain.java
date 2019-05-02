@@ -1,5 +1,6 @@
 package problem;
 
+
 /**
  * Created by orca on 2018/12/11.
  *测试java的引用问题：
@@ -19,5 +20,7 @@ public class TestMain {
         System.out.println(a.getName());//luo
         System.out.println(c.getName());//xia
         System.out.println(e.getName());//tang
+
+
     }
 }

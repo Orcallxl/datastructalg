@@ -4,7 +4,7 @@ package sort;
  * Created by orca on 2018/12/16.
  * 注意自测的测试用例要覆盖完全,边界情况一定要考虑清楚，脑子里要有各种奇葩的测试用例保证程序正确性。+
  * 最好nlogn 最坏n^2 平均nlogn 不稳定
- * 元：分区函数。分区函数2用到了“数组O(1)插入”的思想。
+ * 元：分区函数(如何把一段数字按某个数大小分成两段)。分区函数2用到了“数组O(1)插入”的思想。
  */
 public class QuickSort {
     public static void sort(int[] o) {
@@ -15,7 +15,7 @@ public class QuickSort {
         if (start >= end) {
             return;
         }
-        int pivot = partition2(o, start, end);//分区函数的第二种写法（更好），来自极客时间
+        int pivot = partition3(o, start, end);//分区函数的第二种写法（更好），来自极客时间
         //int pivot = partition(o, start, end);//分区函数的第一种写法
         quickSort(o, start, pivot - 1);
         quickSort(o, pivot + 1, end);
@@ -49,6 +49,25 @@ public class QuickSort {
         return i;
     }
 
+    private static int partition3(int[] o, int start, int end){
+        int pivot = end;
+        int j = start;
+        int tmp;
+        for(int i = start;i<=end;i++){
+            if(o[i]<o[pivot]){
+                tmp = o[j];
+                o[j] = o[i];
+                o[i] = tmp;
+                j++;
+            }
+        }
+        tmp = o[pivot];
+        o[pivot] = o[j];
+        o[j] = tmp;
+        return j;
+    }
+
+    //这里分区算法十分巧妙，多写多看
     private static int partition2(int[] o, int start, int end) {
         int pivot = start;
         int i = end;

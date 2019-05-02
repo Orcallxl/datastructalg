@@ -7,6 +7,9 @@ public class Strudent {
     public String name;
     public String sno;
 
+    public Strudent(){
+
+    }
     public Strudent(String name, String sno) {
         this.name = name;
         this.sno = sno;

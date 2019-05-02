@@ -45,7 +45,6 @@ public class BasicCaculator {
                         result = left / right;
                         stack0.push(result);
                     }
-
                 }
                 stack.push(now);
             }

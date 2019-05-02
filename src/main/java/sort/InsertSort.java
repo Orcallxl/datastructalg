@@ -7,18 +7,33 @@ package sort;
  */
 public class InsertSort {
     public static void sort(int[] o){
-        for(int i = 1 ; i<o.length;i++){
-            int tmp = o[i];
+//        for(int i = 1 ; i<o.length;i++){
+//            int tmp = o[i];
+//            int j = i-1;
+//            for(; j>=0 ;j--){
+//                if(tmp<o[j]){
+//                    o[j+1] = o[j];
+//                }
+//                else{
+//                    break;
+//                }
+//            }
+//            o[j+1] = tmp;
+//        }
+        int tmp;
+        for(int i =1;i<o.length;i++){
+            int insert = o[i];
             int j = i-1;
-            for(; j>=0 ;j--){
-                if(tmp<o[j]){
+            //重要的元：“插入操作怎么写更好看？”
+            for(;j>=0;--j){
+                if(o[j]>insert){
                     o[j+1] = o[j];
                 }
                 else{
                     break;
                 }
             }
-            o[j+1] = tmp;
+            o[j+1]=insert;
         }
     }
     public static void main(String args[]){

@@ -4,6 +4,8 @@ package problem;
 import java.util.HashMap;
 
 /**
+ * 涉及数据结构：hashmap、双向链表
+ * 优化：添加dummyHead和dummyTail（又叫哨兵）来避开空指针校验（插入第一个节点和删除最后一个节点）。
  * Created by orca on 2018/12/9.
  * lru-cache
  * https://leetcode.com/problems/lru-cache/description/

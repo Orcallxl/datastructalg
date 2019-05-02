@@ -1,5 +1,7 @@
 package sort;
 
+import datastruct.SkipList;
+
 /**
  * Created by orca on 2018/12/14.
  * 归并排序的元：“归”+“并”，“并”的本质是“分段有序”下的排序算法
@@ -21,7 +23,31 @@ public class MergeSort {
         int mid = start + (end - start) / 2;
         sort0(o, start, mid);
         sort0(o, mid + 1, end);
-        merge(o, start, mid, end);
+        optMerge(o, start, mid, end);
+    }
+
+    //使用哨兵进行优化
+    private static void optMerge(int[] o, int start, int mid, int end){
+        int[] left = new int[mid-start+2];
+        int[] right = new int[end-mid+1];
+        System.arraycopy(o,start,left,0,mid-start+1);
+        System.arraycopy(o,mid+1,right,0,end-mid);
+        left[mid-start+1] = 99999;//max
+        right[end-mid] = 99999;
+        int i = 0;
+        int j = 0;
+        int k = start;
+        while(left[i]!=99999){
+            if(left[i]<=right[j]){
+                o[k] = left[i];
+                i++;
+            }
+            else {
+                o[k] = right[j];
+                j++;
+            }
+            k++;
+        }
     }
 
     //实际是找出“分段有序”下的最佳(On)合并算法
