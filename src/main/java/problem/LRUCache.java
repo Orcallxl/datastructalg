@@ -1,7 +1,6 @@
 package problem;
 
 
-import java.util.HashMap;
 import java.util.Hashtable;
 
 /**

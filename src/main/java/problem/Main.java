@@ -1,5 +1,7 @@
 package problem;
 
+import sun.awt.geom.AreaOp;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,5 +23,15 @@ public class Main {
             int result =  caculator.caculate(input);
             System.out.println(result);
         }
+//        LRUCache cache = new LRUCache(2);
+//        cache.put(1,1);
+//        cache.put(2,2);
+//        System.out.println(cache.get(1));
+//        cache.put(3,3);
+//        System.out.println(cache.get(2));
+//        cache.put(4,4);
+//        System.out.println(cache.get(1));
+//        System.out.println(cache.get(3));
+//        System.out.println(cache.get(4));
     }
 }
